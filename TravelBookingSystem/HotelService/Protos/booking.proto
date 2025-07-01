@@ -1,0 +1,18 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "GrpcContracts";
+
+package booking;
+
+service HotelBooking {
+  rpc BookHotel (HotelBookingRequest) returns (HotelBookingResponse);
+}
+
+message HotelBookingRequest {
+  string userId = 1;
+  string bookingId = 2;
+}
+
+message HotelBookingResponse {
+  bool success = 1;
+}
